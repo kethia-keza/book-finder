@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Gem Finder</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1> Gem Finder </h1>
+            <p>Search ,Filter and sort books,ad build your reading library</p>
+            <button id="toggleSaved" class="ghost">Walkthrough the lists (<span id="savedCount">0</span>)</button>
+        </header>
+
+        <main>
+       <form id="searchForm" class="row">
+        <input id="q" placeholder="Search by title , author or keyword..." required>
+    <button type="submit">Search</button>
+       </form>
+
+
+       <section class="row controls">
+        <label>Sort
+        <select id="sort">
+            <option value="relevance">Relevance</option>
+            <option value="new">Newest</option>
+            <option value="old">Oldest</option>
+            <option value="rating">Top rated</option>
+            <option value="editions">Most editions </option>
+
+        </select>
+        </label>
+        <label>Subject
+            <select id="subject">
+                <option value="">
+                    Any
+                </option>
+                <option>
+                    fiction
+                </option>
+                <option>
+                    science
+                </option>
+                <option>history</option>
+                <option>science</option>
+                <option>history</option>
+                <option>biography</option>
+                <option>romance</option>
+                <option>fantasy</option>
+                <option>poetry</option>
+                <option>business</option>
+                <option>computers</option>
+                <option>children</option>
+            </select>
+        </label>
+        <label>
+            Language
+            <select id="language">
+                <option value="">Any</option>
+                <option value="eng">English</option>
+                <option value="fre">French</option>
+                <option value="kin">Kinyarwanda</option>
+                <option value="swa">Swahili</option>
+                <option value="spa">Spanish</option>
+                <option  value="ger">German</option>
+            </select>
+        </label>
+        <label>
+            Published after
+            <input id="afterYear" type="number" min="1000" max="2100" placeholder="e.g .2010">
+
+        </label>
+        
+       </section>
+
+       <div id="status" role="status" aria-live="polite"></div>
+       <div id="results" class="grid"></div>
+       <div class="center">
+        <button id="loadMore" hidden>Load More </button></div>
+       </div>
+        </main>
+
+        <aside id="savedPanel" hidden>
+            <div class="panelHead">
+                <h2>My reading list </h2>
+                <button id="closeSaved" class="ghost">X</button>
+            </div>
+            <div id="savedList"></div>
+        </aside>
+
+        <footer>
+            Data and covers from 
+            <a href="https://openlibrary.org/developers/api" target="_blank" rel="noopener">Open Library</a>
+            . <span id="server"></span>
+        </footer>
+
+        <script src="app.js"></script>
+    </body>
+
+</html>
