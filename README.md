@@ -1,4 +1,4 @@
-# 📚 Book Finder
+# 📚 Gem Finder
 
 A book discovery tool for students and readers to search, filter and sort books, and build a personal reading list.
 
